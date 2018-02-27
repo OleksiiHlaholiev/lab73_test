@@ -1,12 +1,12 @@
 {
-  "name": "first_assembly",
+  "name": "project",
   "version": "1.0.0",
-  "description": "try create assemnly",
+  "description": "project workspace",
   "main": "index.js",
   "scripts": {
     "test": "npm install --save-dev gulp"
   },
-  "author": "Vaska",
+  "author": "glalex",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.17.5",
@@ -20,15 +20,14 @@
     "gulp-plumber": "^1.1.0",
     "gulp-rigger": "^0.5.8",
     "gulp-sass": "^2.3.2",
+    "gulp-stylus": "^2.6.0",
     "gulp-sourcemaps": "^2.2.0",
     "gulp-sprite-generator": "^0.2.3",
+    "gulp.spritesmith": "^6.2.1"
     "gulp-uglify": "^2.0.0",
     "gulp-watch": "^4.3.10",
     "imagemin-pngquant": "^5.0.0"
   },
   "dependencies": {
-    "gulp": "^3.9.1",
-    "gulp-stylus": "^2.6.0",
-    "gulp.spritesmith": "^6.2.1"
   }
 }

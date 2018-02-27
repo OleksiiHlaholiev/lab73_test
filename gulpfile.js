@@ -1,6 +1,6 @@
 'use strict';
 
-var folder_name = 'c:/work/lab73_test/'; //path to project
+var folder_name = 'c:/work/lab73_test/';//path to project
 var project_name = folder_name + '/';
 var imgSrc = project_name +'src/images/**';
 var imgDest = project_name +'build/images';

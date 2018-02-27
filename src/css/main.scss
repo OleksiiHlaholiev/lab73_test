@@ -1,0 +1,24 @@
+//@import "fonts";
+//@import "constants";
+//@import "mixins";
+//@import "sprite";
+//@import "svg-sprite";
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+
+    font-weight: normal;
+}
+
+html, body {
+    position: relative;
+
+    width: 100%;
+    background-color: #fff;
+    overflow-x: hidden;
+    font-weight: normal;
+}
