@@ -1,0 +1,91 @@
+@font-face {
+  font-family: "GothamProRegular";
+  src: url("../fonts/GothamProRegular/GothamProRegular.eot");
+  src: url("../fonts/GothamProRegular/GothamProRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/GothamProRegular/GothamProRegular.woff") format("woff"), url("../fonts/GothamProRegular/GothamProRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal; }
+
+@font-face {
+  font-family: "GothamProBold";
+  src: url("../fonts/GothamProBold/GothamProBold.eot");
+  src: url("../fonts/GothamProBold/GothamProBold.eot?#iefix") format("embedded-opentype"), url("../fonts/GothamProBold/GothamProBold.woff") format("woff"), url("../fonts/GothamProBold/GothamProBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal; }
+
+@font-face {
+  font-family: "GothamProMedium";
+  src: url("../fonts/GothamProMedium/GothamProMedium.eot");
+  src: url("../fonts/GothamProMedium/GothamProMedium.eot?#iefix") format("embedded-opentype"), url("../fonts/GothamProMedium/GothamProMedium.woff") format("woff"), url("../fonts/GothamProMedium/GothamProMedium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal; }
+
+@font-face {
+  font-family: "RobotoRegular";
+  src: url("../fonts/RobotoRegular/RobotoRegular.eot");
+  src: url("../fonts/RobotoRegular/RobotoRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/RobotoRegular/RobotoRegular.woff") format("woff"), url("../fonts/RobotoRegular/RobotoRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal; }
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  border: none;
+  font-weight: normal; }
+
+html, body {
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+  overflow-x: hidden;
+  font-weight: normal; }
+
+body {
+  min-height: 100vh;
+  background-image: url("../images/img-text-guru.jpg");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: auto; }
+
+.container {
+  width: 90%;
+  max-width: 1430px;
+  margin: 0 auto; }
+
+header {
+  padding: 30px 0; }
+
+.full-cont {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  .full-cont .left-cont, .full-cont .right-cont {
+    width: 50%; }
+
+.main-section .full-cont .left-cont {
+  line-height: 1.2;
+  text-align: left; }
+  .main-section .full-cont .left-cont .main-header {
+    font-size: 60px;
+    font-family: "GothamProBold", sans-serif;
+    color: #202020;
+    margin-bottom: 40px; }
+  .main-section .full-cont .left-cont .main-info {
+    font-size: 18px;
+    font-family: "GothamProRegular", sans-serif;
+    color: #6d6963;
+    margin-bottom: 30px; }
+
+.main-section .full-cont .right-cont .macbook-cont {
+  position: relative; }
+  .main-section .full-cont .right-cont .macbook-cont img[class^="parallax-"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0; }
+  .main-section .full-cont .right-cont .macbook-cont img.parallax-1 {
+    position: relative;
+    z-index: 10; }
