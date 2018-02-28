@@ -295,6 +295,12 @@ button {
                         background-color: $blueLightColor;
                     }
 
+                    @media all and (max-width: $mobileWidth) {
+                        &:last-child:before {
+                            content: none;
+                        }
+                    }
+
                 }
                 li.active, li:hover {
                     a {

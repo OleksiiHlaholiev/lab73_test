@@ -231,6 +231,9 @@ button {
           width: 30px;
           height: 2px;
           background-color: #7ab9ff; }
+        @media all and (max-width: 992px) {
+          #header #main-menu .menu-cont .menu li:last-child:before {
+            content: none; } }
       #header #main-menu .menu-cont .menu li.active a, #header #main-menu .menu-cont .menu li:hover a {
         color: white; }
       #header #main-menu .menu-cont .menu li.active a {
