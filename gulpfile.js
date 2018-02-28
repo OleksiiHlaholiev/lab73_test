@@ -31,21 +31,24 @@ require('events').EventEmitter.defaultMaxListeners = Infinity;
         js: project_name + 'build/js/',
         css: project_name + 'build/css/',
         img: project_name + 'build/images/',
-        fonts: project_name +'build/fonts/'
+        fonts: project_name +'build/fonts/',
+        video: project_name +'build/video/'
     },
     src: { //Пути откуда брать исходники
         html: project_name + 'src/*.html', //Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
         js: project_name +'src/js/**/*.js',//В стилях и скриптах нам понадобятся только main файлы
         style: project_name + 'src/css/**/*.*',
         img: project_name + 'src/images/**/*.*', //Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
-        fonts: project_name + 'src/fonts/**/*.*'
+        fonts: project_name + 'src/fonts/**/*.*',
+        video: project_name + 'src/video/*.*'
     },
     watch: { //Тут мы укажем, за изменением каких файлов мы хотим наблюдать
         html: project_name +'src/**/*.html',
         js: project_name + 'src/js/**/*.js',
         style: project_name + 'src/css/**/*.*',
         img: project_name + 'src/images/**/*.*',
-        fonts: project_name + 'src/fonts/**/*.*'
+        fonts: project_name + 'src/fonts/**/*.*',
+        video: project_name + 'src/video/*.*'
     },
     clean: project_name + 'build'
 };
@@ -135,7 +138,7 @@ gulp.task('sprite', function() {
                 imgPath: '../images/sprite.png',
                 padding: 10,
                 cssFormat: 'css',
-                algorithm: 'binary-tree',
+                algorithm: 'binary-tree'
             }));
 
     spriteData.img.pipe(gulp.dest(project_name + 'build/images/')); // путь, куда сохраняем картинку
@@ -143,7 +146,7 @@ gulp.task('sprite', function() {
 });
 
 
-//перемещаем fonts
+// перемещаем fonts
 gulp.task('fonts:build', function() {
     gulp.src(path.src.fonts)
         .pipe(plumber())
@@ -156,13 +159,21 @@ gulp.task('fontsConvert', function () {
         .pipe(browserSync.stream());
 });
 
+// перемещаем video
+gulp.task('video:build', function() {
+    gulp.src(path.src.video)
+        .pipe(plumber())
+        .pipe(gulp.dest(path.build.video))
+});
+
 
 gulp.task('build', [
     'html:build',
     'js:build',
     'style:build',
     'fonts:build',
-    'image:build'
+    'image:build',
+    'video:build'
 ]);
 
 gulp.task('watch', function(){
@@ -180,6 +191,9 @@ gulp.task('watch', function(){
     });
     watch([path.watch.fonts], function(event, cb) {
         gulp.start('fonts:build');
+    });
+    watch([path.watch.fonts], function(event, cb) {
+        gulp.start('video:build');
     });
     gulp.watch(project_name + 'src/images/sprite/*.*', ['sprite']);
 });

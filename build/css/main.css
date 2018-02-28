@@ -37,6 +37,7 @@
 html, body {
   position: relative;
   width: 100%;
+  min-height: 100vh;
   background-color: #fff;
   overflow-x: hidden;
   font-weight: normal; }
@@ -49,6 +50,9 @@ html, body {
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px; }
+  @media all and (max-width: 992px) {
+    .container {
+      width: 95%; } }
 
 span {
   font: inherit;
@@ -74,12 +78,16 @@ header {
     width: 50%;
     padding-left: 15px;
     padding-right: 15px; }
+    @media all and (max-width: 992px) {
+      .full-cont .left-cont, .full-cont .right-cont {
+        width: 100%;
+        padding: 0;
+        text-align: center; } }
 
 .main-section {
-  padding-top: 10vh; }
+  padding-top: 7vh; }
   .main-section .full-cont .left-cont {
-    line-height: 1.2;
-    text-align: left; }
+    line-height: 1.2; }
     .main-section .full-cont .left-cont .main-header {
       font-size: 60px;
       font-family: "GothamProBold", sans-serif;
@@ -112,7 +120,24 @@ header {
       left: 0; }
     .main-section .full-cont .right-cont .macbook-cont img.parallax-1 {
       position: relative;
-      z-index: 10; }
+      z-index: 5; }
+    .main-section .full-cont .right-cont .macbook-cont .video-cont {
+      position: absolute;
+      z-index: 6;
+      top: 54.5%;
+      left: 48%;
+      width: calc(410/625 * 100%);
+      height: calc(268/393 * 100%);
+      overflow: hidden;
+      transform: translateX(-50%) translateY(-50%); }
+      .main-section .full-cont .right-cont .macbook-cont .video-cont .video {
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+           object-fit: cover; }
 
 .user-section {
   position: relative;
@@ -128,18 +153,39 @@ header {
     line-height: 1.2;
     text-align: left;
     width: 96%;
-    height: 250px;
+    height: 25vh;
     padding: 0 40px;
-    border-radius: 7px;
+    border-radius: 6px;
     background-repeat: no-repeat;
-    background-position: center center; }
+    background-position: center center;
+    background-size: cover;
+    box-shadow: 0px 50px 30px 0px rgba(29, 33, 43, 0.25);
+    transition: all 0.4s; }
+    @media all and (max-width: 992px) {
+      .user-section .user-btn {
+        text-align: center;
+        border-radius: 0;
+        width: 100%;
+        height: 50vh; } }
     .user-section .user-btn .btn-header {
       font-size: 36px;
       font-family: "GothamProRegular", sans-serif;
-      margin-bottom: 30px; }
+      transform: translateY(10px);
+      transition: all 0.4s; }
     .user-section .user-btn .btn-title {
       font-size: 18px;
-      font-family: "RobotoRegular", sans-serif; }
+      font-family: "RobotoRegular", sans-serif;
+      opacity: 0;
+      transform: translateY(-100%);
+      transition: all 0.4s; }
+    .user-section .user-btn:hover {
+      box-shadow: 0px 60px 30px 0px rgba(29, 33, 43, 0.35);
+      transform: translateY(-10px); }
+      .user-section .user-btn:hover .btn-header {
+        transform: translateY(-15px); }
+      .user-section .user-btn:hover .btn-title {
+        opacity: 1;
+        transform: translateY(15px); }
   .user-section .partner-btn {
     background-image: url("../images/img-button-1.png"); }
   .user-section .advertiser-btn {
