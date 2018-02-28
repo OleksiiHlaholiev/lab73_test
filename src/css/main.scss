@@ -97,6 +97,10 @@ header {
 
                 margin-bottom: 40px;
 
+                @media all and (max-width: $mobileWidth) {
+                    font-size: 32px;
+                }
+
                 span {
                     position: relative;
                     z-index: 1;
@@ -120,6 +124,10 @@ header {
                 color: rgb(109, 105, 99);
 
                 margin-bottom: 30px;
+
+                @media all and (max-width: $mobileWidth) {
+                    font-size: 12px;
+                }
             }
         }
 
@@ -172,6 +180,18 @@ header {
     position: relative;
     padding: 7vh 0;
 
+    @media all and (max-width: $mobileWidth) {
+        padding-bottom: 0;
+    }
+
+    .container {
+        @media all and (max-width: $mobileWidth) {
+            width: 100%;
+            padding: 0;
+        }
+    }
+
+
     .img-text-guru {
         position: absolute;
         bottom: 0;
@@ -206,9 +226,11 @@ header {
         @media all and (max-width: $mobileWidth) {
             text-align: center;
             border-radius: 0;
+            box-shadow: none;
 
             width: 100%;
             height: 50vh;
+            padding: 0 20px;
         }
 
         .btn-header, .btn-title {
@@ -221,6 +243,12 @@ header {
 
             transform: translateY(10px);
             transition: all 0.4s;
+
+            @media all and (max-width: $mobileWidth) {
+                font-size: 24px;
+                transform: translateY(0);
+                margin-bottom: 20px;
+            }
         }
         .btn-title {
             font-size: 18px;
@@ -229,28 +257,43 @@ header {
             opacity: 0;
             transform: translateY(-100%);
             transition: all 0.4s;
-        }
 
-        &:hover {
-            box-shadow: 0px 60px 30px 0px rgba(29, 33, 43, 0.35);
-            transform: translateY(-10px);
-
-            .btn-header {
-                transform: translateY(-15px);
-            }
-
-            .btn-title {
+            @media all and (max-width: $mobileWidth) {
+                font-size: 15px;
                 opacity: 1;
-                transform: translateY(15px);
+                transform: translateY(0);
             }
+        }
+        @media all and (min-width: $mobileWidth) {
+            &:hover {
+                box-shadow: 0px 60px 30px 0px rgba(29, 33, 43, 0.35);
+                transform: translateY(-10px);
 
+                .btn-header {
+                    transform: translateY(-15px);
+                }
+
+                .btn-title {
+                    opacity: 1;
+                    transform: translateY(15px);
+                }
+
+            }
         }
     }
     .partner-btn {
         background-image: url("../images/img-button-1.png");
+
+        @media all and (max-width: $mobileWidth) {
+            background-image: url("../images/img-button-mobile-1.jpg");
+        }
     }
     .advertiser-btn {
         background-image: url("../images/img-button-2.png");
+
+        @media all and (max-width: $mobileWidth) {
+            background-image: url("../images/img-button-mobile-2.jpg");
+        }
     }
 
     .full-cont {

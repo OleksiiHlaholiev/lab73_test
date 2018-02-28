@@ -93,6 +93,9 @@ header {
       font-family: "GothamProBold", sans-serif;
       color: #202020;
       margin-bottom: 40px; }
+      @media all and (max-width: 992px) {
+        .main-section .full-cont .left-cont .main-header {
+          font-size: 32px; } }
       .main-section .full-cont .left-cont .main-header span {
         position: relative;
         z-index: 1; }
@@ -110,6 +113,9 @@ header {
       font-family: "GothamProRegular", sans-serif;
       color: #6d6963;
       margin-bottom: 30px; }
+      @media all and (max-width: 992px) {
+        .main-section .full-cont .left-cont .main-info {
+          font-size: 12px; } }
   .main-section .full-cont .right-cont .macbook-cont {
     position: relative; }
     .main-section .full-cont .right-cont .macbook-cont img[class^="parallax-"] {
@@ -142,6 +148,13 @@ header {
 .user-section {
   position: relative;
   padding: 7vh 0; }
+  @media all and (max-width: 992px) {
+    .user-section {
+      padding-bottom: 0; } }
+  @media all and (max-width: 992px) {
+    .user-section .container {
+      width: 100%;
+      padding: 0; } }
   .user-section .img-text-guru {
     position: absolute;
     bottom: 0;
@@ -165,8 +178,10 @@ header {
       .user-section .user-btn {
         text-align: center;
         border-radius: 0;
+        box-shadow: none;
         width: 100%;
-        height: 50vh; } }
+        height: 50vh;
+        padding: 0 20px; } }
     .user-section .user-btn .btn-header, .user-section .user-btn .btn-title {
       display: block; }
     .user-section .user-btn .btn-header {
@@ -174,24 +189,41 @@ header {
       font-family: "GothamProRegular", sans-serif;
       transform: translateY(10px);
       transition: all 0.4s; }
+      @media all and (max-width: 992px) {
+        .user-section .user-btn .btn-header {
+          font-size: 24px;
+          transform: translateY(0);
+          margin-bottom: 20px; } }
     .user-section .user-btn .btn-title {
       font-size: 18px;
       font-family: "RobotoRegular", sans-serif;
       opacity: 0;
       transform: translateY(-100%);
       transition: all 0.4s; }
-    .user-section .user-btn:hover {
-      box-shadow: 0px 60px 30px 0px rgba(29, 33, 43, 0.35);
-      transform: translateY(-10px); }
-      .user-section .user-btn:hover .btn-header {
-        transform: translateY(-15px); }
-      .user-section .user-btn:hover .btn-title {
-        opacity: 1;
-        transform: translateY(15px); }
+      @media all and (max-width: 992px) {
+        .user-section .user-btn .btn-title {
+          font-size: 15px;
+          opacity: 1;
+          transform: translateY(0); } }
+    @media all and (min-width: 992px) {
+      .user-section .user-btn:hover {
+        box-shadow: 0px 60px 30px 0px rgba(29, 33, 43, 0.35);
+        transform: translateY(-10px); }
+        .user-section .user-btn:hover .btn-header {
+          transform: translateY(-15px); }
+        .user-section .user-btn:hover .btn-title {
+          opacity: 1;
+          transform: translateY(15px); } }
   .user-section .partner-btn {
     background-image: url("../images/img-button-1.png"); }
+    @media all and (max-width: 992px) {
+      .user-section .partner-btn {
+        background-image: url("../images/img-button-mobile-1.jpg"); } }
   .user-section .advertiser-btn {
     background-image: url("../images/img-button-2.png"); }
+    @media all and (max-width: 992px) {
+      .user-section .advertiser-btn {
+        background-image: url("../images/img-button-mobile-2.jpg"); } }
   .user-section .full-cont .left-cont {
     text-align: left; }
   .user-section .full-cont .right-cont {
