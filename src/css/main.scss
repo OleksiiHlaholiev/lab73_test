@@ -211,6 +211,10 @@ header {
             height: 50vh;
         }
 
+        .btn-header, .btn-title {
+            display: block;
+        }
+
         .btn-header {
             font-size: 36px;
             font-family: $GothamProRegular;
