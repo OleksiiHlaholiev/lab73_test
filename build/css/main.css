@@ -66,7 +66,9 @@ button {
 
 @media all and (max-width: 992px) {
   #header.active {
-    background-color: #fff; } }
+    background-color: #fff; }
+    #header.active .title-cont-mob {
+      display: block; } }
 
 #header.active .logo-cont img {
   display: none; }
@@ -106,6 +108,18 @@ button {
       #header .logo-cont {
         left: 50%;
         transform: translateX(-50%) scale(0.75); } }
+  #header .title-cont-mob {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); }
+    #header .title-cont-mob p {
+      font-size: 18px;
+      font-family: "GothamProMedium", sans-serif;
+      color: #202020;
+      text-transform: uppercase;
+      line-height: 1.2;
+      text-align: center; }
   #header #menu-btn {
     display: inline-block;
     width: 30px;

@@ -53,6 +53,10 @@ button {
 
     @media all and (max-width: $mobileWidth) {
         background-color: #fff;
+
+        .title-cont-mob {
+            display: block;
+        }
     }
 
     .logo-cont {
@@ -118,6 +122,23 @@ button {
         @media all and (max-width: $mobileWidth) {
             left: 50%;
             transform: translateX(-50%) scale(0.75);
+        }
+    }
+
+    .title-cont-mob {
+        display: none;
+
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+
+        p {
+            font-size: 18px;
+            font-family: $GothamProMedium;
+            color: rgb(32, 32, 32);
+            text-transform: uppercase;
+            line-height: 1.2;
+            text-align: center;
         }
     }
 
