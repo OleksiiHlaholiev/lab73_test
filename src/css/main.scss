@@ -57,6 +57,61 @@ header {
 
         }
     }
+
+    #menu-btn {
+        display: inline-block;
+        width: 30px;
+        height: 17px;
+        position: relative;
+        z-index: 5;
+        margin: 10px 0 10px auto;
+        transform: rotate(0deg);
+        transition: .5s ease-in-out;
+        cursor: pointer;
+
+        span {
+            display: block;
+            position: absolute;
+            left: 0;
+            height: 3px;
+            width: 100%;
+            background: #7ab9ff;
+            opacity: 1;
+
+            transform: rotate(0deg);
+            transform-origin: left center;
+            transition: .25s ease-in-out;
+        }
+
+        span:nth-child(1) {
+            top: 0;
+        }
+
+        span:nth-child(2) {
+            top: 7px;
+        }
+
+        span:nth-child(3) {
+            top: 14px;
+        }
+    }
+
+    #menu-btn.active {
+        span:nth-child(1) {
+            transform: rotate(45deg);
+            top: -3px;
+            left: 5px;
+        }
+        span:nth-child(2) {
+            width: 0;
+            opacity: 0;
+        }
+        span:nth-child(3) {
+            transform: rotate(-45deg);
+            top: 18px;
+            left: 5px;
+        }
+    }
 }
 
 .full-cont {
@@ -97,6 +152,9 @@ header {
 
                 margin-bottom: 40px;
 
+                @media all and (max-width: 1400px) {
+                    font-size: 48px;
+                }
                 @media all and (max-width: $mobileWidth) {
                     font-size: 32px;
                 }
@@ -152,8 +210,9 @@ header {
                     position: absolute;
                     z-index: 6;
 
+                    // some magic numbers due to mock-up video position at macbook
                     top: 54.5%;
-                    left: 48%;
+                    left: 48.3%;
                     width: calc(410/625 * 100%);
                     height: calc(268/393 * 100%);
                     overflow: hidden;
