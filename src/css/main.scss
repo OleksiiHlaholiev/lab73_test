@@ -270,9 +270,11 @@ button {
                     position: relative;
 
                     a {
+                        display: block;
                         font-size: 28px;
                         font-family: $GothamProMedium;
-                        color: #959899;
+                        //color: #959899;
+                        color: #fff;
                         text-transform: uppercase;
                         line-height: 1.2;
                         text-decoration: none;
@@ -295,22 +297,24 @@ button {
                         background-color: $blueLightColor;
                     }
 
-                    @media all and (max-width: $mobileWidth) {
-                        &:last-child:before {
-                            content: none;
-                        }
+                    &:last-child:before {
+                        content: none;
                     }
 
                 }
-                li.active, li:hover {
-                    a {
-                        color: rgb(255, 255, 255);
-                    }
-                }
+                //li.active, li:hover {
+                //    a {
+                //        color: rgb(255, 255, 255);
+                //    }
+                //}
                 li.active {
                     a {
                         pointer-events: none;
                     }
+                }
+
+                &:hover li:not(:hover) a{
+                    color: #959899;
                 }
             }
         }
@@ -466,6 +470,43 @@ button {
         }
     }
 
+    .cta-cont {
+        text-align: center;
+        display: none;
+
+        @media all and (max-width: $mobileWidth) {
+            display: block;
+        }
+
+        .cta-text {
+            padding-top: 30px;
+            //padding-bottom: 15px;
+
+            font-size: 14px;
+            font-family: $RobotoMedium;
+            color: rgb(32, 32, 32);
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+        .arrow-down-btn {
+            display: block;
+
+            img {
+                width: 50px;
+
+                animation-name: move-down-up;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+                animation-timing-function: ease-in-out;
+            }
+        }
+
+        @keyframes move-down-up {
+            from {transform: translateY(0)}
+            to {transform: translateY(75%)}
+        }
+    }
 }
 
 .user-section {

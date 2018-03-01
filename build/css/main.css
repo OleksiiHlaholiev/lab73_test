@@ -26,6 +26,13 @@
   font-style: normal;
   font-weight: normal; }
 
+@font-face {
+  font-family: "RobotoMedium";
+  src: url("../fonts/RobotoMedium/RobotoMedium.eot");
+  src: url("../fonts/RobotoMedium/RobotoMedium.eot?#iefix") format("embedded-opentype"), url("../fonts/RobotoMedium/RobotoMedium.woff") format("woff"), url("../fonts/RobotoMedium/RobotoMedium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal; }
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -212,9 +219,10 @@ button {
         padding: 25px 0;
         position: relative; }
         #header #main-menu .menu-cont .menu li a {
+          display: block;
           font-size: 28px;
           font-family: "GothamProMedium", sans-serif;
-          color: #959899;
+          color: #fff;
           text-transform: uppercase;
           line-height: 1.2;
           text-decoration: none;
@@ -231,13 +239,12 @@ button {
           width: 30px;
           height: 2px;
           background-color: #7ab9ff; }
-        @media all and (max-width: 992px) {
-          #header #main-menu .menu-cont .menu li:last-child:before {
-            content: none; } }
-      #header #main-menu .menu-cont .menu li.active a, #header #main-menu .menu-cont .menu li:hover a {
-        color: white; }
+        #header #main-menu .menu-cont .menu li:last-child:before {
+          content: none; }
       #header #main-menu .menu-cont .menu li.active a {
         pointer-events: none; }
+      #header #main-menu .menu-cont .menu:hover li:not(:hover) a {
+        color: #959899; }
 
 .full-cont {
   display: -ms-flexbox;
@@ -339,6 +346,34 @@ button {
           height: 100%;
           -o-object-fit: cover;
              object-fit: cover; }
+  .main-section .cta-cont {
+    text-align: center;
+    display: none; }
+    @media all and (max-width: 992px) {
+      .main-section .cta-cont {
+        display: block; } }
+    .main-section .cta-cont .cta-text {
+      padding-top: 30px;
+      font-size: 14px;
+      font-family: "RobotoMedium", sans-serif;
+      color: #202020;
+      text-transform: uppercase;
+      line-height: 1.2; }
+    .main-section .cta-cont .arrow-down-btn {
+      display: block; }
+      .main-section .cta-cont .arrow-down-btn img {
+        width: 50px;
+        animation-name: move-down-up;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: ease-in-out; }
+
+@keyframes move-down-up {
+  from {
+    transform: translateY(0); }
+  to {
+    transform: translateY(75%); } }
 
 .user-section {
   position: relative;
