@@ -76,9 +76,11 @@ $(function () {
         menuStateFlag = 0;
         $(mainMenu).fadeOut(400);
 
-        $(menuDarkMask).addClass('transparent').removeClass('animated slideInLeft');
-        $(menuBgCont).addClass('transparent').removeClass('animated slideInLeft');
-        $(menuItems).addClass('transparent').removeClass('animated fadeInLeft');
+        setTimeout(function () {
+            $(menuDarkMask).addClass('transparent').removeClass('animated slideInLeft');
+            $(menuBgCont).addClass('transparent').removeClass('animated slideInLeft');
+            $(menuItems).addClass('transparent').removeClass('animated fadeInLeft');
+        }, 400);
     }
     function menuAnimateState() {
         menuStateFlag = 1;
