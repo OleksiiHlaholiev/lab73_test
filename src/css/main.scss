@@ -342,7 +342,7 @@ button {
 }
 
 .main-section {
-    padding-top: 7vh;
+    padding-top: 5vh;
 
     .full-cont {
         .left-cont {
@@ -600,7 +600,7 @@ button {
         @media all and (min-width: $mobileWidth) {
             &:hover {
                 transform: translateY(-10px);
-                
+
                 .user-btn {
                     box-shadow: 0px 60px 30px 0px rgba(29, 33, 43, 0.35);
 
