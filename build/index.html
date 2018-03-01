@@ -66,11 +66,13 @@
             </div>
             <div class="right-cont">
                 <div class="macbook-cont">
-                    <div class="video-cont">
-                        <video class="video" autoplay loop muted preload="auto">
-                            <source src="video/videoplayback.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-                            Тег video не поддерживается вашим браузером.
-                        </video>
+                    <div class="video-wrapper">
+                        <div class="video-cont">
+                            <video class="video" autoplay loop muted preload="auto">
+                                <source src="video/videoplayback.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+                                Тег video не поддерживается вашим браузером.
+                            </video>
+                        </div>
                     </div>
 
                     <img class="parallax-1" src="images/img-parallax-1.png" alt="img-parallax">
@@ -89,16 +91,22 @@
     <div class="container">
         <div class="full-cont">
             <div class="left-cont">
-                <button class="user-btn partner-btn">
-                    <span class="btn-header">Я — Партнер</span>
-                    <span class="btn-title">Хочу повысить доход от сайта</span>
-                </button>
+                <div class="btn-wrapper">
+                    <button class="user-btn partner-btn">
+                        <span class="btn-header">Я — Партнер</span>
+                        <span class="btn-title">Хочу повысить доход от сайта</span>
+                        <span class="select-btn">Выбрать</span>
+                    </button>
+                </div>
             </div>
-            <div class="right-cont">
-                <button class="user-btn advertiser-btn">
-                    <span class="btn-header">Я — Рекламодатель</span>
-                    <span class="btn-title">Хочу расширить целевую аудиторию</span>
-                </button>
+            <div class="right-cont btn-wrapper">
+                <div class="btn-wrapper">
+                    <button class="user-btn advertiser-btn">
+                        <span class="btn-header">Я — Рекламодатель</span>
+                        <span class="btn-title">Хочу расширить целевую аудиторию</span>
+                        <span class="select-btn">Выбрать</span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>

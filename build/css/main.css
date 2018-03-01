@@ -261,6 +261,7 @@ button {
   .main-section .full-cont .left-cont {
     line-height: 1.2; }
     .main-section .full-cont .left-cont .main-header {
+      position: relative;
       font-size: 60px;
       font-family: "GothamProBold", sans-serif;
       color: #202020;
@@ -271,18 +272,31 @@ button {
       @media all and (max-width: 992px) {
         .main-section .full-cont .left-cont .main-header {
           font-size: 32px; } }
-      .main-section .full-cont .left-cont .main-header span {
+      .main-section .full-cont .left-cont .main-header:before {
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        left: -15px;
+        content: url("../images/img-guru.jpg.png");
+        transform: translateX(-100%); }
+        @media all and (max-width: 992px) {
+          .main-section .full-cont .left-cont .main-header:before {
+            display: none; } }
+      .main-section .full-cont .left-cont .main-header .line {
         position: relative;
         z-index: 1; }
-        .main-section .full-cont .left-cont .main-header span:before {
+        .main-section .full-cont .left-cont .main-header .line:before {
           position: absolute;
           z-index: -1;
           content: '';
           bottom: 15%;
           left: 0;
-          width: 100%;
+          width: 0;
           height: 30%;
-          background-color: #7ab9ff; }
+          background-color: #7ab9ff;
+          transition: all 0.4s; }
+      .main-section .full-cont .left-cont .main-header .line.active:before {
+        width: 100%; }
     .main-section .full-cont .left-cont .main-info {
       font-size: 18px;
       font-family: "GothamProRegular", sans-serif;
@@ -302,23 +316,29 @@ button {
     .main-section .full-cont .right-cont .macbook-cont img.parallax-1 {
       position: relative;
       z-index: 5; }
-    .main-section .full-cont .right-cont .macbook-cont .video-cont {
+    .main-section .full-cont .right-cont .macbook-cont .video-wrapper {
       position: absolute;
       z-index: 6;
-      top: 54.5%;
-      left: 48.3%;
-      width: calc(410/625 * 100%);
-      height: calc(268/393 * 100%);
-      overflow: hidden;
-      transform: translateX(-50%) translateY(-50%); }
-      .main-section .full-cont .right-cont .macbook-cont .video-cont .video {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+      .main-section .full-cont .right-cont .macbook-cont .video-wrapper .video-cont {
         position: absolute;
-        left: 0;
-        right: 0;
-        width: 100%;
-        height: 100%;
-        -o-object-fit: cover;
-           object-fit: cover; }
+        top: 54.5%;
+        left: 48.3%;
+        width: calc(410/625 * 100%);
+        height: calc(268/393 * 100%);
+        overflow: hidden;
+        transform: translateX(-50%) translateY(-50%); }
+        .main-section .full-cont .right-cont .macbook-cont .video-wrapper .video-cont .video {
+          position: absolute;
+          left: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          -o-object-fit: cover;
+             object-fit: cover; }
 
 .user-section {
   position: relative;
@@ -336,70 +356,92 @@ button {
     left: 0;
     width: auto;
     max-width: 50%; }
-  .user-section .user-btn {
-    color: white;
-    line-height: 1.2;
-    text-align: left;
-    width: 96%;
-    height: 25vh;
-    padding: 0 40px;
-    border-radius: 6px;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    box-shadow: 0px 50px 30px 0px rgba(29, 33, 43, 0.25);
+  .user-section .btn-wrapper {
     transition: all 0.4s; }
-    @media all and (max-width: 992px) {
-      .user-section .user-btn {
-        text-align: center;
-        border-radius: 0;
-        box-shadow: none;
-        width: 100%;
-        height: 50vh;
-        padding: 0 20px; } }
-    .user-section .user-btn .btn-header, .user-section .user-btn .btn-title {
-      display: block; }
-    .user-section .user-btn .btn-header {
-      font-size: 36px;
-      font-family: "GothamProRegular", sans-serif;
-      transform: translateY(10px);
+    .user-section .btn-wrapper .user-btn {
+      color: white;
+      line-height: 1.2;
+      text-align: left;
+      width: 96%;
+      height: 25vh;
+      padding: 0 40px;
+      border-radius: 6px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      box-shadow: 0px 50px 30px 0px rgba(29, 33, 43, 0.25);
       transition: all 0.4s; }
       @media all and (max-width: 992px) {
-        .user-section .user-btn .btn-header {
-          font-size: 24px;
-          transform: translateY(0);
-          margin-bottom: 20px; } }
-    .user-section .user-btn .btn-title {
-      font-size: 18px;
-      font-family: "RobotoRegular", sans-serif;
-      opacity: 0;
-      transform: translateY(-100%);
-      transition: all 0.4s; }
+        .user-section .btn-wrapper .user-btn {
+          text-align: center;
+          border-radius: 0;
+          box-shadow: none;
+          width: 100%;
+          height: 50vh;
+          padding: 0 20px; } }
+      .user-section .btn-wrapper .user-btn span {
+        display: block; }
+      .user-section .btn-wrapper .user-btn .btn-header {
+        font-size: 36px;
+        font-family: "GothamProRegular", sans-serif;
+        transform: translateY(10px);
+        transition: all 0.4s; }
+        @media all and (max-width: 992px) {
+          .user-section .btn-wrapper .user-btn .btn-header {
+            font-size: 24px;
+            transform: translateY(0);
+            margin-bottom: 20px; } }
+      .user-section .btn-wrapper .user-btn .btn-title {
+        font-size: 18px;
+        font-family: "RobotoRegular", sans-serif;
+        opacity: 0;
+        transform: translateY(-100%);
+        transition: all 0.4s; }
+        @media all and (max-width: 992px) {
+          .user-section .btn-wrapper .user-btn .btn-title {
+            font-size: 15px;
+            opacity: 1;
+            transform: translateY(0); } }
+      .user-section .btn-wrapper .user-btn .select-btn {
+        display: none;
+        width: 190px;
+        padding: 15px;
+        margin: 0 auto;
+        margin-top: 30px;
+        border: 2px solid #fff;
+        border-radius: 30px;
+        font-size: 16px;
+        font-family: "GothamProMedium", sans-serif;
+        color: white;
+        text-transform: uppercase;
+        text-align: center; }
+        @media all and (max-width: 992px) {
+          .user-section .btn-wrapper .user-btn .select-btn {
+            display: block; } }
+    .user-section .btn-wrapper .partner-btn {
+      background-image: url("../images/img-button-1.png"); }
       @media all and (max-width: 992px) {
-        .user-section .user-btn .btn-title {
-          font-size: 15px;
-          opacity: 1;
-          transform: translateY(0); } }
+        .user-section .btn-wrapper .partner-btn {
+          background-image: url("../images/img-button-mobile-1.jpg"); } }
+    .user-section .btn-wrapper .advertiser-btn {
+      background-image: url("../images/img-button-2.png"); }
+      @media all and (max-width: 992px) {
+        .user-section .btn-wrapper .advertiser-btn {
+          background-image: url("../images/img-button-mobile-2.jpg"); } }
     @media all and (min-width: 992px) {
-      .user-section .user-btn:hover {
-        box-shadow: 0px 60px 30px 0px rgba(29, 33, 43, 0.35);
+      .user-section .btn-wrapper:hover {
         transform: translateY(-10px); }
-        .user-section .user-btn:hover .btn-header {
-          transform: translateY(-15px); }
-        .user-section .user-btn:hover .btn-title {
-          opacity: 1;
-          transform: translateY(15px); } }
-  .user-section .partner-btn {
-    background-image: url("../images/img-button-1.png"); }
-    @media all and (max-width: 992px) {
-      .user-section .partner-btn {
-        background-image: url("../images/img-button-mobile-1.jpg"); } }
-  .user-section .advertiser-btn {
-    background-image: url("../images/img-button-2.png"); }
-    @media all and (max-width: 992px) {
-      .user-section .advertiser-btn {
-        background-image: url("../images/img-button-mobile-2.jpg"); } }
+        .user-section .btn-wrapper:hover .user-btn {
+          box-shadow: 0px 60px 30px 0px rgba(29, 33, 43, 0.35); }
+          .user-section .btn-wrapper:hover .user-btn .btn-header {
+            transform: translateY(-15px); }
+          .user-section .btn-wrapper:hover .user-btn .btn-title {
+            opacity: 1;
+            transform: translateY(15px); } }
   .user-section .full-cont .left-cont {
     text-align: left; }
   .user-section .full-cont .right-cont {
     text-align: right; }
+
+.transparent {
+  opacity: 0; }
