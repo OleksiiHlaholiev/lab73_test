@@ -121,7 +121,7 @@ $(function () {
 $(function () {
     var $parallaxContainer = $(".macbook-cont"); // our container
     var $parallaxItems = $parallaxContainer.find(".parallax");  //elements
-    var fixer = 0.0008;		//experiment with the value
+    var fixer = 0.0005;		//experiment with the value
 
     $(document).on("mousemove", function (event) {
 
@@ -135,16 +135,16 @@ $(function () {
             var speedX = item.data("speed-x");
             var speedY = item.data("speed-y");
 
-            /*TweenLite.to(item, 0.5, {
+            TweenLite.to(item, 0.5, {
 							x: (item.position().left + pageX * speedX)*fixer,    //calculate the new X based on mouse position * speed
 							y: (item.position().top + pageY * speedY)*fixer
-						});*/
+						});
 
             //or use set - not so smooth, but better performance
-            TweenLite.set(item, {
+            /*TweenLite.set(item, {
                 x: (item.position().left + pageX * speedX) * fixer,
                 y: (item.position().top + pageY * speedY) * fixer
-            });
+            });*/
 
         });
     });
