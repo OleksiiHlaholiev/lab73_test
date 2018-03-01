@@ -422,7 +422,7 @@ button {
             .macbook-cont {
                 position: relative;
 
-                img[class^="parallax-"] {
+                img[class^="parallax"] {
                     position: absolute;
                     width: 100%;
                     height: 100%;
@@ -430,9 +430,11 @@ button {
                     left: 0;
                 }
 
-                img.parallax-1 {
+                img.reference {
                     position: relative;
                     z-index: 5;
+
+                    width: 100%;
                 }
 
                 .video-wrapper {
