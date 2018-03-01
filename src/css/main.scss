@@ -396,7 +396,7 @@ button {
                         height: 30%;
 
                         background-color: rgb(122, 185, 255);
-                        transition: all 0.4s;
+                        transition: all 0.6s;
                     }
                 }
                 .line.active {
@@ -569,6 +569,7 @@ button {
                 width: 100%;
                 height: 50vh;
                 padding: 0 20px;
+                background-position: center top;
             }
 
             span {

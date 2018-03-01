@@ -1,6 +1,10 @@
+'use strict';
+
 $(function () {
 
-    var menuStateFlag = 0;
+    var menuStateFlag = 0,
+        isMobileViewFlag = true,
+        mobileViewWidth = 992;
 
     var header = $('#header'),
         headerFullCont = $('#header .full-cont'),
@@ -77,35 +81,49 @@ $(function () {
         menuStateFlag = 0;
         $(mainMenu).fadeOut(400);
 
-        setTimeout(function () {
-            $(menuDarkMask).addClass('transparent').removeClass('animated slideInLeft');
-            $(menuBgCont).addClass('transparent').removeClass('animated slideInLeft');
-            $(menuItems).addClass('transparent').removeClass('animated fadeInLeft');
-        }, 400);
+        if (!isMobileViewFlag) {
+            setTimeout(function () {
+                $(menuDarkMask).addClass('transparent').removeClass('animated slideInLeft');
+                $(menuBgCont).addClass('transparent').removeClass('animated slideInLeft');
+                $(menuItems).addClass('transparent').removeClass('animated fadeInLeft');
+            }, 400);
+        } else {
+            setTimeout(function () {
+                $(menuDarkMask).addClass('transparent').removeClass('animated fadeIn');
+                $(menuItems).addClass('transparent').removeClass('animated slideInDown');
+            }, 400);
+        }
+
     }
 
     function menuAnimateState() {
         menuStateFlag = 1;
         $(mainMenu).fadeIn(400);
 
-        setTimeout(function () {
-            $(menuDarkMask).removeClass('transparent').addClass('animated slideInLeft');
-        }, 100);
-        setTimeout(function () {
-            $(menuBgCont).removeClass('transparent').addClass('animated slideInLeft');
-        }, 500);
-        $(menuItems).each(function (index, item) {
+        if (!isMobileViewFlag) {
             setTimeout(function () {
-                $(item).removeClass('transparent').addClass('animated fadeInLeft');
-            }, 600 + 300 * index);
-        });
+                $(menuDarkMask).removeClass('transparent').addClass('animated slideInLeft');
+            }, 100);
+            setTimeout(function () {
+                $(menuBgCont).removeClass('transparent').addClass('animated slideInLeft');
+            }, 500);
+            $(menuItems).each(function (index, item) {
+                setTimeout(function () {
+                    $(item).removeClass('transparent').addClass('animated fadeInLeft');
+                }, 600 + 300 * index);
+            });
+        } else {
+            setTimeout(function () {
+                $(menuDarkMask).removeClass('transparent').addClass('animated fadeIn');
+            }, 100);
+            $(menuItems).each(function (index, item) {
+                setTimeout(function () {
+                    $(item).removeClass('transparent').addClass('animated slideInDown');
+                }, 600 + 300 * index);
+            });
+        }
+
     }
-
-    pageInitState();
-    menuInitState();
-
-    pageAnimateState();
-
 
     $(menuBtn).on('click', function () {
         $(this).toggleClass('active');
@@ -115,6 +133,19 @@ $(function () {
         (menuStateFlag === 0) ? menuAnimateState() : menuInitState();
     });
 
+    function resizeWindowHandler(event) {
+        isMobileViewFlag = window.innerWidth < mobileViewWidth;
+    }
+
+    $(window).on('resize', resizeWindowHandler);
+
+    // ***************************************************************************************
+    resizeWindowHandler(); // initial call
+
+    pageInitState();
+    menuInitState();
+
+    pageAnimateState();
 });
 
 // parallax effect with GSAP
