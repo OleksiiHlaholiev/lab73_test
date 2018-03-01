@@ -121,7 +121,7 @@ $(function () {
 $(function () {
     var $parallaxContainer = $(".macbook-cont"); // our container
     var $parallaxItems = $parallaxContainer.find(".parallax");  //elements
-    var fixer = 0.0005;		//experiment with the value
+    var fixer = 0.001;		//experiment with the value
 
     $(document).on("mousemove", function (event) {
 
