@@ -24,6 +24,7 @@ $(function () {
         macbookCont = $('.main-section .macbook-cont'),
         macbookVideo = $('.main-section .macbook-cont .video-wrapper'),
         macbookImgs = $('.main-section .macbook-cont img'),
+        ctaCont = $('.main-section .cta-cont'),
 
         userBtns = $('.user-section .btn-wrapper .user-btn'),
         imgTextGuru = $('.user-section .img-text-guru');
@@ -142,6 +143,12 @@ $(function () {
         (menuStateFlag === 0) ? menuAnimateState() : menuInitState(false);
     });
 
+    $(menuBtn).on('click', function () {
+        if (isMobileViewFlag) {
+
+        }
+    });
+
     $(userBtns).on('click', function () {
         // console.log('class = ' + $(this).attr('class'));
 
@@ -156,6 +163,7 @@ $(function () {
         });
 
         setTimeout(function () {
+            $(ctaCont).addClass('animated fadeOut');
             $(macbookVideo).removeClass('zoomIn').addClass('animated rotateOutUpRight');
             $(macbookImgs[0]).removeClass('zoomIn').addClass('animated rotateOutUpRight');
         }, 800);
@@ -198,6 +206,47 @@ $(function () {
     menuInitState(true);
 
     pageAnimateState();
+
+    // ***************************************************************************************
+    // start of touch-swipe logic
+    var startY = 0;
+    var EPSILON = 150;
+
+    document.body.addEventListener('touchstart', function(e){
+        // e.preventDefault();
+
+        var touchobj = e.changedTouches[0]; // первая точка прикосновения
+        startY = parseInt(touchobj.clientY); // положение точки касания по Y, относительно края браузера
+        // console.log('Status: touchstart clientY: ' + startY + 'px');
+    }, false);
+
+    document.body.addEventListener('touchend', function(e){
+        // e.preventDefault();
+
+        var touchobj = e.changedTouches[0]; // первая точка прикосновения для данного события
+        // console.log('Событие: touchend Координаты точки Y: ' + touchobj.clientY + 'px');
+
+        var dist = parseInt(touchobj.clientY) - startY;
+        var referSection = $('#user-section').offset().top;
+
+        if(Math.abs(dist) > window.innerHeight / 6) {
+            if (dist > 0) {
+                // down swipe
+                // console.log("down swipe!");
+            } else {
+                // up swipe
+                // console.log("up swipe!");
+
+                if(isMobileViewFlag && $(window).scrollTop() < referSection) {
+                    // console.log("up swipe!");
+                    $('html, body').animate({scrollTop: referSection + 0.07 * window.innerHeight}, 1000);
+                }
+
+            }
+        }
+
+    }, false);
+    // end of touch-swipe logic
 });
 
 // parallax effect with GSAP
