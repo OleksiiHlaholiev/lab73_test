@@ -9,6 +9,8 @@ $(function () {
     var header = $('#header'),
         headerFullCont = $('#header .full-cont'),
         logoCont = $('#header .logo-cont'),
+        logoImg = $('#header .logo-cont .logo-img'),
+        logoImgMob = $('#header .logo-cont .logo-img-mobile'),
         titleContMob = $('#header .title-cont-mob'),
         menuBtn = $('#menu-btn'),
         mainMenu = $('#main-menu'),
@@ -90,7 +92,8 @@ $(function () {
             }, 400);
         } else {
             setTimeout(function () {
-                // $([titleContMob, menuDarkMask]).addClass('transparent').removeClass('animated fadeIn');
+                $(logoImg).removeClass('transparent').addClass('animated fadeIn');
+                $(logoImgMob).addClass('transparent').removeClass('animated slideInDown');
                 $(titleContMob).addClass('transparent').removeClass('animated fadeIn');
                 $(menuDarkMask).addClass('transparent').removeClass('animated fadeIn');
                 $(menuItems).addClass('transparent').removeClass('animated slideInDown');
@@ -117,7 +120,8 @@ $(function () {
             });
         } else {
             setTimeout(function () {
-                // $([titleContMob, menuDarkMask]).removeClass('transparent').addClass('animated fadeIn');
+                $(logoImg).addClass('transparent').removeClass('animated fadeIn');
+                $(logoImgMob).removeClass('transparent').addClass('animated slideInDown');
                 $(titleContMob).removeClass('transparent').addClass('animated fadeIn');
                 $(menuDarkMask).removeClass('transparent').addClass('animated fadeIn');
             }, 100);
