@@ -76,7 +76,7 @@ $(function () {
         });
     }
 
-    function menuInitState() {
+    function menuInitState(isFirstInitFlag) {
         menuStateFlag = 0;
         $(mainMenu).fadeOut(400);
 
@@ -88,7 +88,9 @@ $(function () {
             }, 400);
         } else {
             setTimeout(function () {
-                $(logoImg).removeClass('transparent').addClass('animated fadeIn');
+                if (!isFirstInitFlag) {
+                    $(logoImg).removeClass('transparent').addClass('animated fadeIn');
+                }
                 $(logoImgMob).addClass('transparent').removeClass('animated slideInDown');
                 $(titleContMob).addClass('transparent').removeClass('animated fadeIn');
                 $(menuDarkMask).addClass('transparent').removeClass('animated fadeIn');
@@ -135,7 +137,7 @@ $(function () {
         $(header).toggleClass('active');
         // $(mainMenu).fadeToggle(400);
 
-        (menuStateFlag === 0) ? menuAnimateState() : menuInitState();
+        (menuStateFlag === 0) ? menuAnimateState() : menuInitState(false);
     });
 
     function resizeWindowHandler(event) {
@@ -148,7 +150,7 @@ $(function () {
     resizeWindowHandler(); // initial call
 
     pageInitState();
-    menuInitState();
+    menuInitState(true);
 
     pageAnimateState();
 });
