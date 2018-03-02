@@ -178,8 +178,8 @@ $(function () {
         });
 
         setTimeout(function () {
-            $(imgTextGuru).addClass('fixed-center');
-            $(logoImg).addClass('fixed-center');
+            $(imgTextGuru).addClass('transition fixed-center');
+            $(header).addClass('transition fixed-center');
         }, 2500);
 
 

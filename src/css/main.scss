@@ -85,6 +85,7 @@ button {
 
 #header {
     padding: 30px 0;
+    z-index: 10;
 
     @media all and (max-width: $mobileWidth) {
         padding: 10px 0;
@@ -112,9 +113,9 @@ button {
     .logo-cont {
         position: relative;
 
-        img {
-            transition: all 0.4s;
-        }
+        //img {
+        //    transition: all 0.4s;
+        //}
 
         .logo-img {
             display: block;
@@ -681,6 +682,10 @@ button {
 // initial elements state before animation
 .transparent {
     opacity: 0;
+}
+
+.transition {
+    transition: all 0.4s;
 }
 
 .fixed-center {

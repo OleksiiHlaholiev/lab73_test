@@ -90,7 +90,8 @@ button {
       display: block; } }
 
 #header {
-  padding: 30px 0; }
+  padding: 30px 0;
+  z-index: 10; }
   @media all and (max-width: 992px) {
     #header {
       padding: 10px 0; } }
@@ -107,8 +108,6 @@ button {
       display: block; } }
   #header .logo-cont {
     position: relative; }
-    #header .logo-cont img {
-      transition: all 0.4s; }
     #header .logo-cont .logo-img {
       display: block; }
     #header .logo-cont .logo-img-mobile {
@@ -485,6 +484,9 @@ button {
 
 .transparent {
   opacity: 0; }
+
+.transition {
+  transition: all 0.4s; }
 
 .fixed-center {
   position: fixed !important;
