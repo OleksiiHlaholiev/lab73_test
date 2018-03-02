@@ -44,10 +44,6 @@ $(function () {
         }, 200);
 
         setTimeout(function () {
-            $(menuBtn).removeClass('transparent').addClass('animated slideInDown');
-        }, 300);
-
-        setTimeout(function () {
             $(mainHeader).removeClass('transparent').addClass('animated fadeInUp');
         }, 400);
 
