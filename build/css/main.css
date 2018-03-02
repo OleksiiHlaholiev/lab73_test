@@ -107,6 +107,8 @@ button {
       display: block; } }
   #header .logo-cont {
     position: relative; }
+    #header .logo-cont img {
+      transition: all 0.4s; }
     #header .logo-cont .logo-img {
       display: block; }
     #header .logo-cont .logo-img-mobile {
@@ -391,7 +393,8 @@ button {
     bottom: 0;
     left: 0;
     width: auto;
-    max-width: 50%; }
+    max-width: 50%;
+    transition: all 0.4s; }
   .user-section .btn-wrapper {
     transition: all 0.4s; }
     .user-section .btn-wrapper .user-btn {
@@ -482,3 +485,9 @@ button {
 
 .transparent {
   opacity: 0; }
+
+.fixed-center {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translateX(-50%) translateY(-50%) !important; }

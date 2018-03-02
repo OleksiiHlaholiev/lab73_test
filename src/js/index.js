@@ -1,4 +1,5 @@
 'use strict';
+$.fn.reverse = [].reverse;
 
 $(function () {
 
@@ -20,6 +21,7 @@ $(function () {
 
         mainHeader = $('.main-section .main-header'),
         mainInfo = $('.main-section .main-info'),
+        macbookCont = $('.main-section .macbook-cont'),
         macbookVideo = $('.main-section .macbook-cont .video-wrapper'),
         macbookImgs = $('.main-section .macbook-cont img'),
 
@@ -138,6 +140,49 @@ $(function () {
         // $(mainMenu).fadeToggle(400);
 
         (menuStateFlag === 0) ? menuAnimateState() : menuInitState(false);
+    });
+
+    $(userBtns).on('click', function () {
+        // console.log('class = ' + $(this).attr('class'));
+
+        $(userBtns).each(function (index, item) {
+            setTimeout(function () {
+                if (index % 2) {
+                    $(item).addClass('animated rotateOutUpRight');
+                } else {
+                    $(item).addClass('animated rotateOutUpLeft');
+                }
+            }, 100 + 300 * index);
+        });
+
+        setTimeout(function () {
+            $(macbookVideo).removeClass('zoomIn').addClass('animated rotateOutUpRight');
+            $(macbookImgs[0]).removeClass('zoomIn').addClass('animated rotateOutUpRight');
+        }, 800);
+
+        setTimeout(function () {
+            $(mainHeader).removeClass('fadeInUp').addClass('animated slideOutUp');
+            $(menuBtn).addClass('animated slideOutUp');
+        }, 1200);
+
+        setTimeout(function () {
+            $(mainInfo).removeClass('fadeInUp').addClass('animated slideOutDown');
+        }, 1600);
+
+        $(macbookImgs).reverse().each(function (index, item) {
+            setTimeout(function () {
+                if (index !== 3) {
+                    $(item).removeClass('zoomIn').addClass('animated slideOutDown');
+                }
+            }, 1600 + 300 * index);
+        });
+
+        setTimeout(function () {
+            $(imgTextGuru).addClass('fixed-center');
+            $(logoImg).addClass('fixed-center');
+        }, 2500);
+
+
     });
 
     function resizeWindowHandler(event) {
